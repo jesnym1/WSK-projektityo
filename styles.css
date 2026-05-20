@@ -1,5 +1,4 @@
-@media (min-width: 576px) {
-    :root {
+:root {
         --container: 992px;
         --postwidth: 33.333333333333%;
         --btnpadding: 20px 40px;
@@ -28,7 +27,7 @@
         --h6lineheight: 1.4em;
         --h6letterspacing: 0px;
     }
-}
+
 
 :root {
     --nv-primary-accent: #4fc5c5;
@@ -85,10 +84,10 @@ header {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #ffffff;
+    background-color: #4fc5c5;
     text-align: left;
     font-size: 3rem;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
     margin: 0;
     z-index: 10;
 }
@@ -149,62 +148,21 @@ button.menu-toggle {
 .content-box {
     padding: 20px;
     margin: 10px;
-    background-color: #f0f0f0;
+    background-color: #192734;
     border: 1px solid #ccc;
-    }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    }
-    
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    }
-    
-th {
-    background-color: #f2f2f2;
-    }
-
-.transition-button {
-    background-color: #4fc5c5;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    }
-      
-.transition-button:hover {
-    background-color: lightcoral;
+    color:#ffffff
     }
 
 .pseudo-list li:nth-child(odd) {
-    background-color: lightgray;
+    background-color: #4fc5c5;
     }
       
 .pseudo-list li:nth-child(even) {
     background-color: white;
     }
       
-.quote {
-    position: relative;
-    padding-left: 20px;
-    font-style: italic;
-    }
-      
-.quote::before {
-    content: '“';
-    font-size: 40px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: lightgray;
-    }
-
 .responsive-container {
+    margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
     }
@@ -253,6 +211,20 @@ footer {
     display: block;
 }
 
+.varaus-section {
+    text-align: center;
+    margin: 40px 0;
+    button {
+        background-color: #4fc5c5;
+        color: white;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+}
+
 .kuntoutus-kuva {
     max-width: 100%;
     height: auto;
@@ -262,23 +234,6 @@ footer {
 @media (max-width: 600px) {
 .column {
     flex: 100%;
-    }
-    }
-
-.media-query-box {
-    padding: 20px;
-    text-align: center;
-    }
-    
-@media (max-width: 600px) {
-.media-query-box {
-    background-color: lightcoral;
-    }
-    }
-    
-@media (min-width: 601px) {
-.media-query-box {
-    background-color: lightblue;
     }
     }
 
@@ -299,7 +254,7 @@ input[type="text"], input[type="email"] {
     }
     
 input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #4fc5c5;
     color: white;
     padding: 10px;
     border: none;
@@ -346,7 +301,7 @@ input[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #222224;
     border-radius: 12px;
     background-color: #ffffff;
     min-height: 120px;
@@ -371,9 +326,6 @@ input[type="submit"]:hover {
 .carousel-button:disabled {
     opacity: 0.4;
     cursor: not-allowed;
-}
-.carousel-item {
-    animation: logo-pulse 8s ease-in-out infinite alternate;
 }
 
 .carousel-item:hover {
