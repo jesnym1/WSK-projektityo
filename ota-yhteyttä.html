@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Ota yhteyttä</title>
+</head>
+    
+<body>
+    <header>
+        <a href="#index.html"><img src="../WSK projektityo/Kuvat/naprapaatti-JN-logo3.png" alt="Naprapaatti Jesse Nyman logo" class="logo"></a>
+        <nav class="responsive-nav">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+            <ul id="main-nav" class="nav-list">
+        <li><a href="#index.html">Etusivu</a></li>
+        <li><a href="#naprapaatin-vastaanotto.html">Naprapaatin vastaanotto</a></li>
+        <li><a href="#fysiikkavalmennus.html">Fysiikkavalmennus</a></li>
+        <li><a href="#ajanvaraus">Ajanvaraus</a></li>
+        <li><a href="#ota-yhteyttä.html">Ota yhteyttä</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <main>
+    <div>
+        <h1>Ota yhteyttä</h1><br><br>
+        
+    <form>
+    <label for="nimi">Nimi:</label>
+    <input type="text" id="nimi" name="nimi"><br><br>
+    <label for="sähköpostiosoite">Sähköpostiosoite:</label>
+    <input type="sähköpostiosoite" id="sähköpostiosoite" name="sähköpostiosoite"><br><br>
+    <label for="viesti">Viesti:</label>
+    <input type="text" id="viesti" name="viesti"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+    </div>
+    </main>
+
+    <section class="logo-carousel-section">
+        <h2>Yhteistyökumppanit</h2>
+        <div class="logo-carousel">
+            <button class="carousel-button prev" aria-label="Previous logos">‹</button>
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track">
+                    <div class="carousel-item"><img src="../WSK projektityo/Kuvat/Aplico-logo-uusi.png" alt="Aplico logo"></div>
+                    <div class="carousel-item"><img src="../WSK projektityo/Kuvat/fysios-mehilainen-logo.png" alt="Mehiläinen logo"></div>
+                    <div class="carousel-item"><img src="../WSK projektityo/Kuvat/nummelan-osteofysio-logo.jpg" alt="Nummelan Osteofysio logo"></div>
+                    <div class="carousel-item"><img src="../WSK projektityo/Kuvat/Heat-Gym-logo.jpg" alt="Heat Gym logo"></div>
+                    <div class="carousel-item"><img src="../WSK projektityo/Kuvat/Viima-logo.png" alt="Viima logo"></div>
+                    <div class="carousel-item"><img src="../WSK projektityo/Kuvat/Crossfit-Nummela-logo.png" alt="Crossfit Nummela logo"></div>
+                    <div class="carousel-item"><img src="../WSK projektityo/Kuvat/HSGC-Ry-logo.jpg" alt="HSGC-Ry logo"></div>
+                    <div class="carousel-item"><img src="../WSK projektityo/Kuvat/StLG logo.png" alt="StLG logo"></div>
+                    <div class="carousel-item"><img src="../WSK projektityo/Kuvat/vihti-golf-logo.jpg" alt="vihti-golf logo"></div>
+                </div>
+            </div>
+            <button class="carousel-button next" aria-label="Next logos">›</button>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="responsive-container">
+            <div class="column footer-column">
+                <p>Liikkumistasi tukemassa</p>
+                <a href="#index.html"><img src="../WSK projektityo/Kuvat/naprapaatti-JN-logo3.png" alt="Naprapaatti Jesse Nyman logo" class="logo"></a>
+            </div>
+            <div class="column footer-column">
+                <p class="footer-address">
+                    Mehiläinen Lohja Ratakatu<br>
+                    Ratakatu 24 (Aplico)<br>
+                    08150 Lohja<br><br>
+                    Karstuntien toimipiste<br>
+                    Karstuntie 517<br>
+                    08450 Lohja<br><br>
+                    Nummelan Osteofysio<br>
+                    Tuusantie 3<br>
+                    03100 Nummela
+                </p>
+            </div>
+        </div>
+        <p>Copyright Naprapaatti Jesse Nyman 2026</p>
+    </footer>
+        <script>
+        (function(){
+            var btn = document.querySelector('.menu-toggle');
+            var nav = document.querySelector('.responsive-nav');
+            var list = document.getElementById('main-nav');
+            if (!btn || !nav || !list) return;
+            btn.addEventListener('click', function(){
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                nav.classList.toggle('open');
+            });
+        })();
+
+         (function(){
+            var track = document.querySelector('.carousel-track');
+            var wrapper = document.querySelector('.carousel-track-wrapper');
+            var prev = document.querySelector('.carousel-button.prev');
+            var next = document.querySelector('.carousel-button.next');
+            var items = document.querySelectorAll('.carousel-item');
+            if (!track || !wrapper || !prev || !next || items.length === 0) return;
+
+            var currentIndex = 0;
+            var maxIndex = 0;
+
+            function getVisibleCount() {
+                return Math.max(1, Math.floor(wrapper.offsetWidth / items[0].offsetWidth));
+            }
+
+            function updateMaxIndex() {
+                var visible = getVisibleCount();
+                maxIndex = Math.max(0, items.length - visible);
+                if (currentIndex > maxIndex) {
+                    currentIndex = maxIndex;
+                }
+            }
+
+            function updateButtons() {
+                prev.disabled = currentIndex === 0;
+                next.disabled = currentIndex === maxIndex;
+            }
+
+            function updateTrack() {
+                var offset = items[currentIndex].offsetLeft;
+                track.style.transform = 'translateX(-' + offset + 'px)';
+            }
+
+            prev.addEventListener('click', function(){
+                if (currentIndex > 0) {
+                    currentIndex -= 1;
+                    updateTrack();
+                    updateButtons();
+                }
+            });
+
+            next.addEventListener('click', function(){
+                if (currentIndex < maxIndex) {
+                    currentIndex += 1;
+                    updateTrack();
+                    updateButtons();
+                }
+            });
+
+            window.addEventListener('resize', function(){
+                updateMaxIndex();
+                updateTrack();
+                updateButtons();
+            });
+
+            var autoPlay = null;
+            function startAutoPlay() {
+                if (autoPlay) clearInterval(autoPlay);
+                autoPlay = setInterval(function(){
+                    if (currentIndex < maxIndex) {
+                        currentIndex += 1;
+                    } else {
+                        currentIndex = 0;
+                    }
+                    updateTrack();
+                    updateButtons();
+                }, 4000);
+            }
+
+            wrapper.addEventListener('mouseenter', function(){
+                if (autoPlay) clearInterval(autoPlay);
+            });
+
+            wrapper.addEventListener('mouseleave', function(){
+                startAutoPlay();
+            });
+
+            updateMaxIndex();
+            updateButtons();
+            updateTrack();
+            startAutoPlay();
+        })();
+        </script>
+</body>
+
+</html>

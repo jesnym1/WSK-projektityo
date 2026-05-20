@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Naprapaatti Jesse Nyman - Etusivu</title>
+</head>
+    
+<body>
+    <header>
+        <a href="#index.html"><img src="../WSK projektityo/Kuvat/naprapaatti-JN-logo3.png" alt="Naprapaatti Jesse Nyman logo" class="logo"></a>
+        <nav class="responsive-nav">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+            <ul id="main-nav" class="nav-list">
+        <li><a href="#index.html">Etusivu</a></li>
+        <li><a href="#naprapaatin-vastaanotto.html">Naprapaatin vastaanotto</a></li>
+        <li><a href="#fysiikkavalmennus.html">Fysiikkavalmennus</a></li>
+        <li><a href="#ajanvaraus">Ajanvaraus</a></li>
+        <li><a href="#ota-yhteyttä.html">Ota yhteyttä</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <div class="kansikuva-container">
+        <img src="../WSK projektityo/Kuvat/naprapaatti-kansikuva.jpg" alt="Naprapaatti ja asiakas kuntosalilla" class="kansikuva">
+        <h1>Liikkumistasi tukemassa</h1>
+    </div>
+    
+    <main>
+        <section id="about">
+        
+        <p>I'm 31 years old and I live in Nummela</p>
+        </section>
+    </main>
+
+    <h2>My hobbies</h2>
+    <ul class="pseudo-list">
+    <li>Gym</li>
+    <li>Muay Thai</li>
+    <li>Golf</li>
+    <li>Watching sports</li>
+    </ul>
+
+    <div class="content-box">
+        <h3>Sample Heading</h3>
+        <p>This is a sample paragraph inside a div element.</p>
+    </div>
+
+    <blockquote class="quote">
+        This is a sample quote.
+    </blockquote>
+    
+    <div class="responsive-container">
+      <div class="column">Column 1</div>
+      <div class="column">Column 2</div>
+    </div>
+
+    <footer>
+        <div class="responsive-container">
+            <div class="column footer-column">
+                <p>Liikkumistasi tukemassa</p>
+                <a href="#index.html"><img src="../WSK projektityo/Kuvat/naprapaatti-JN-logo3.png" alt="Naprapaatti Jesse Nyman logo" class="logo"></a>
+            </div>
+            <div class="column footer-column">
+                <p class="footer-address">
+                    Mehiläinen Lohja Ratakatu<br>
+                    Ratakatu 24 (Aplico)<br>
+                    08150 Lohja<br><br>
+                    Karstuntien toimipiste<br>
+                    Karstuntie 517<br>
+                    08450 Lohja<br><br>
+                    Nummelan Osteofysio<br>
+                    Tuusantie 3<br>
+                    03100 Nummela
+                </p>
+            </div>
+        </div>
+        <p>Copyright Naprapaatti Jesse Nyman 2026</p>
+    </footer>
+        <script>
+        (function(){
+            var btn = document.querySelector('.menu-toggle');
+            var nav = document.querySelector('.responsive-nav');
+            var list = document.getElementById('main-nav');
+            if (!btn || !nav || !list) return;
+            btn.addEventListener('click', function(){
+                var expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                nav.classList.toggle('open');
+            });
+        })();
+        </script>
+</body>
+
+</html>

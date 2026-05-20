@@ -1,0 +1,411 @@
+@media (min-width: 576px) {
+    :root {
+        --container: 992px;
+        --postwidth: 33.333333333333%;
+        --btnpadding: 20px 40px;
+        --primarybtnpadding: 20px 40px;
+        --secondarybtnpadding: calc(20px - 3px) calc(40px - 3px);
+        --btnfs: 16px;
+        --bodyfontsize: 16px;
+        --bodylineheight: 1.6;
+        --bodyletterspacing: 0px;
+        --h1fontsize: 55px;
+        --h1lineheight: 1.4em;
+        --h1letterspacing: 0px;
+        --h2fontsize: 35px;
+        --h2lineheight: 1.4em;
+        --h2letterspacing: 0px;
+        --h3fontsize: 22px;
+        --h3lineheight: 1.4em;
+        --h3letterspacing: 0px;
+        --h4fontsize: 18px;
+        --h4lineheight: 1.4em;
+        --h4letterspacing: 0px;
+        --h5fontsize: 16px;
+        --h5lineheight: 1.4em;
+        --h5letterspacing: 0px;
+        --h6fontsize: 14px;
+        --h6lineheight: 1.4em;
+        --h6letterspacing: 0px;
+    }
+}
+
+:root {
+    --nv-primary-accent: #4fc5c5;
+    --nv-secondary-accent: #8e8e8e;
+    --nv-site-bg: #ffffff;
+    --nv-light-bg: #f7efe8;
+    --nv-dark-bg: #192734;
+    --nv-text-color: #222224;
+    --nv-text-dark-bg: #ffffff;
+    --nv-c-1: #77b978;
+    --nv-c-2: #f37262;
+    --nv-fallback-ff: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: white;
+    color: #222224;
+    padding: 5px;
+    font: Fira sans, sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 20px;  /* Space between logo, menu-toggle and nav */
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+        width: auto;
+        max-width: 180px;
+        height: auto;
+    }
+
+/* Cover image container with overlay h1 */
+.kansikuva-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.kansikuva {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(80%)
+}
+
+.kansikuva-container h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: left;
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    z-index: 10;
+}
+
+@media (max-width: 600px) {
+    .kansikuva-container h1 {
+        font-size: 1.5rem;
+    }
+}
+
+body {
+    background-color: white;
+    font: Poppins, sans-serif;
+}
+
+button.menu-toggle {
+    background-color: #4fc5c5;
+    color: white;
+    align-items: left;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: none; /* hidden on larger screens; shown in small-screen media query */
+    }
+
+.responsive-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.responsive-nav .nav-list {
+    display: flex;
+    list-style: none;
+    align-items: right;
+    gap: 20px;
+    font: fira sans, sans-serif;
+    text-wrap: nowrap;
+    }
+    
+@media (max-width: 600px) {
+.responsive-nav .nav-list {
+    display: none;
+    }
+    
+.responsive-nav .menu-toggle {
+    display: block;
+    }
+
+/* when JS toggles the open class, show the nav as a vertical list */
+.responsive-nav.open .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+}
+
+.content-box {
+    padding: 20px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    }
+    
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    }
+    
+th {
+    background-color: #f2f2f2;
+    }
+
+.transition-button {
+    background-color: #4fc5c5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+      
+.transition-button:hover {
+    background-color: lightcoral;
+    }
+
+.pseudo-list li:nth-child(odd) {
+    background-color: lightgray;
+    }
+      
+.pseudo-list li:nth-child(even) {
+    background-color: white;
+    }
+      
+.quote {
+    position: relative;
+    padding-left: 20px;
+    font-style: italic;
+    }
+      
+.quote::before {
+    content: '“';
+    font-size: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: lightgray;
+    }
+
+.responsive-container {
+    display: flex;
+    flex-wrap: wrap;
+    }
+    
+.column {
+    flex: 1;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Stack footer column items vertically */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-column p {
+    margin: 0;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.footer-column .logo {
+    margin-top: 10px;
+}
+
+.footer-address {
+    line-height: 1.6;
+}
+
+footer p{
+    text-align: center;
+}
+
+footer {
+    background-color: #192734;
+    color: white;
+    padding: 20px;   
+}
+
+.alkuhaastattelu-kuva {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.kuntoutus-kuva {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 600px) {
+.column {
+    flex: 100%;
+    }
+    }
+
+.media-query-box {
+    padding: 20px;
+    text-align: center;
+    }
+    
+@media (max-width: 600px) {
+.media-query-box {
+    background-color: lightcoral;
+    }
+    }
+    
+@media (min-width: 601px) {
+.media-query-box {
+    background-color: lightblue;
+    }
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+    
+label {
+    font-weight: bold;
+    }
+    
+input[type="text"], input[type="email"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    }
+    
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+    
+input[type="submit"]:hover {
+    background-color: #45a049;
+    }
+
+.logo-carousel-section {
+    padding: 40px 20px;
+}
+
+.logo-carousel-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.logo-carousel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-track-wrapper {
+    overflow: hidden;
+    flex: 1;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+}
+
+.carousel-item {
+    flex: 0 0 calc((100% - 40px) / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #ffffff;
+    min-height: 120px;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.carousel-button {
+    background-color: #4fc5c5;
+    color: white;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.carousel-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.carousel-item {
+    animation: logo-pulse 8s ease-in-out infinite alternate;
+}
+
+.carousel-item:hover {
+    animation-play-state: paused;
+}
+
+@keyframes logo-pulse {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 900px) {
+    .carousel-item {
+        flex: 0 0 calc((100% - 20px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-carousel {
+        flex-direction: column;
+    }
+
+    .carousel-item {
+        flex: 0 0 100%;
+    }
+
+    .carousel-button {
+        width: 40px;
+        height: 40px;
+    }
+}
