@@ -214,7 +214,9 @@ footer {
 .varaus-section {
     text-align: center;
     margin: 40px 0;
-    button {
+}
+
+.button {
         background-color: #4fc5c5;
         color: white;
         font-weight: bold;
@@ -223,7 +225,6 @@ footer {
         border-radius: 4px;
         cursor: pointer;
     }
-}
 
 .kuntoutus-kuva {
     max-width: 100%;
